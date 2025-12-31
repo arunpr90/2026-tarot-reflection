@@ -1,10 +1,22 @@
 // constants.ts
-
 import { TarotCardData } from "./types";
 
 /**
+ * Focus areas shown in Setup screen
+ */
+export const FOCUS_AREAS = [
+  "Career",
+  "Money",
+  "Health",
+  "Relationships",
+  "Personal Growth",
+  "Family",
+  "Travel",
+] as const;
+
+/**
  * Major Arcana tarot cards (22)
- * Minimal but valid data to satisfy generator logic
+ * Minimal but complete dataset to satisfy generator + UI
  */
 export const MAJOR_ARCANA: TarotCardData[] = [
   {
@@ -19,13 +31,13 @@ export const MAJOR_ARCANA: TarotCardData[] = [
   },
   {
     name: "The High Priestess",
-    keywords_upright: ["Intuition", "Inner voice", "Wisdom"],
-    keywords_reversed: ["Hidden motives", "Ignoring intuition"],
+    keywords_upright: ["Intuition", "Inner wisdom"],
+    keywords_reversed: ["Ignoring intuition", "Secrets"],
   },
   {
     name: "The Empress",
-    keywords_upright: ["Growth", "Care", "Abundance"],
-    keywords_reversed: ["Dependence", "Creative block"],
+    keywords_upright: ["Growth", "Abundance", "Care"],
+    keywords_reversed: ["Creative block", "Dependence"],
   },
   {
     name: "The Emperor",
@@ -34,17 +46,17 @@ export const MAJOR_ARCANA: TarotCardData[] = [
   },
   {
     name: "The Hierophant",
-    keywords_upright: ["Tradition", "Learning", "Guidance"],
+    keywords_upright: ["Tradition", "Guidance", "Learning"],
     keywords_reversed: ["Rebellion", "Breaking norms"],
   },
   {
     name: "The Lovers",
-    keywords_upright: ["Connection", "Choice", "Alignment"],
+    keywords_upright: ["Alignment", "Choice", "Connection"],
     keywords_reversed: ["Imbalance", "Disharmony"],
   },
   {
     name: "The Chariot",
-    keywords_upright: ["Momentum", "Willpower", "Victory"],
+    keywords_upright: ["Willpower", "Momentum", "Victory"],
     keywords_reversed: ["Lack of direction", "Resistance"],
   },
   {
@@ -64,12 +76,12 @@ export const MAJOR_ARCANA: TarotCardData[] = [
   },
   {
     name: "Justice",
-    keywords_upright: ["Fairness", "Truth", "Accountability"],
-    keywords_reversed: ["Bias", "Avoiding responsibility"],
+    keywords_upright: ["Truth", "Fairness", "Accountability"],
+    keywords_reversed: ["Bias", "Avoidance"],
   },
   {
     name: "The Hanged Man",
-    keywords_upright: ["New perspective", "Pause", "Acceptance"],
+    keywords_upright: ["New perspective", "Pause"],
     keywords_reversed: ["Stagnation", "Resistance"],
   },
   {
@@ -90,7 +102,7 @@ export const MAJOR_ARCANA: TarotCardData[] = [
   {
     name: "The Tower",
     keywords_upright: ["Sudden change", "Truth revealed"],
-    keywords_reversed: ["Avoided disaster", "Delayed change"],
+    keywords_reversed: ["Delayed change", "Avoidance"],
   },
   {
     name: "The Star",
@@ -105,7 +117,7 @@ export const MAJOR_ARCANA: TarotCardData[] = [
   {
     name: "The Sun",
     keywords_upright: ["Joy", "Success", "Vitality"],
-    keywords_reversed: ["Overconfidence", "Temporary dip"],
+    keywords_reversed: ["Temporary dip", "Overconfidence"],
   },
   {
     name: "Judgement",
