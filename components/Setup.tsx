@@ -1,46 +1,57 @@
-import React from "react";
-import { FOCUS_AREAS } from "../constants";
-import { FocusArea, ReadingType } from "../types";
+return (
+  <div className="page">
+    <div className="shell">
+      <div className="card">
+        <div className="hero">
+          <h1 className="h1">How will my 2026 be?</h1>
+          <p className="p">
+            Pick a focus area and a reading type. You’ll get a simple, reflective tarot-style reading (for fun + clarity).
+          </p>
+        </div>
 
-type SetupProps = {
-  onSubmit: (focus: FocusArea, type: ReadingType) => void;
-};
+        <div className="formRow">
+          <div>
+            <div className="label">Choose your focus</div>
+            <select className="select" value={focus} onChange={(e) => setFocus(e.target.value as any)}>
+              {FOCUS_AREAS.map((f) => (
+                <option key={f.value} value={f.value}>{f.label}</option>
+              ))}
+            </select>
+          </div>
 
-export default function Setup({ onSubmit }: SetupProps) {
-  const [focus, setFocus] = React.useState<FocusArea>(FOCUS_AREAS[0]);
-  const [type, setType] = React.useState<ReadingType>("single");
+          <div>
+            <div className="label">Reading type</div>
+            <select className="select" value={readingType} onChange={(e) => setReadingType(e.target.value as any)}>
+              {READING_TYPES.map((r) => (
+                <option key={r.value} value={r.value}>{r.label}</option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-  return (
-    <div>
-      <h2>Choose your focus</h2>
+        <div className="actions">
+          <button className="btn btnPrimary" onClick={onGenerate}>
+            Get Reading
+          </button>
+          <button className="btn" onClick={onReset}>
+            Reset
+          </button>
+        </div>
+      </div>
 
-      <select
-        value={focus}
-        onChange={(e) => setFocus(e.target.value as FocusArea)}
-      >
-        {FOCUS_AREAS.map((area) => (
-          <option key={area} value={area}>
-            {area}
-          </option>
-        ))}
-      </select>
+      <div className="rightCard">
+        <div className="card">
+          <h2 className="h1" style={{ fontSize: 18, marginBottom: 10 }}>What you’ll get</h2>
+          <div className="tip">✅ Card draw + meaning</div>
+          <div className="tip">✅ Focus-based advice</div>
+          <div className="tip">✅ A simple takeaway for 2026</div>
+        </div>
 
-      <h3 style={{ marginTop: "24px" }}>Reading type</h3>
-
-      <select
-        value={type}
-        onChange={(e) => setType(e.target.value as ReadingType)}
-      >
-        <option value="single">Single Card</option>
-        <option value="three">Three Cards</option>
-      </select>
-
-      <button
-        style={{ marginTop: "24px" }}
-        onClick={() => onSubmit(focus, type)}
-      >
-        Get Reading
-      </button>
+        <div className="card">
+          <h2 className="h1" style={{ fontSize: 18, marginBottom: 10 }}>Pro tip</h2>
+          <p className="p">Try “Money + Three Cards” first. It gives a nice past/present/future style structure.</p>
+        </div>
+      </div>
     </div>
-  );
-}
+  </div>
+);
