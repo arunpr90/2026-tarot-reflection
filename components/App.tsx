@@ -1,9 +1,9 @@
 
 import React, { useState, useCallback } from 'react';
-import { Layout } from './components/Layout';
-import { Landing } from './components/Landing';
-import { Setup } from './components/Setup';
-import { Results } from './components/Results';
+import Layout from "./Layout";
+import Landing from "./Landing";
+import Results from "./Results";
+import Setup from "./Setup";
 import { AppState, FocusArea, ReadingType, DrawnCard } from './types';
 import { drawCards, generateReading } from './utils/generator';
 
