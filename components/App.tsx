@@ -5,7 +5,7 @@ import Landing from "./Landing";
 import Results from "./Results";
 import Setup from "./Setup";
 import { AppState, FocusArea, ReadingType, DrawnCard } from './types';
-import { drawCards, generateReading } from './utils/generator';
+import { drawCards, generateReading } from '../utils/generator';
 
 const App: React.FC = () => {
   const [state, setState] = useState<AppState>({
