@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FOCUS_AREAS } from '../constants';
+import { FOCUS_AREAS } from './constants';
 import { FocusArea, ReadingType } from '../types';
 
 interface SetupProps {
