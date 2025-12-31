@@ -1,14 +1,28 @@
+import React from "react";
 
-import React from 'react';
+type LayoutProps = {
+  children: React.ReactNode;
+};
 
-export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-8 md:py-16 max-w-4xl mx-auto">
-      {children}
-      <footer className="mt-12 text-center text-slate-400 text-[10px] uppercase tracking-[0.2em] pb-8 leading-loose">
-        Reflecting on 2026 &bull; Tarot Wisdom <br/> 
-        powered by artificial and Arun Intelligence
-      </footer>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #0f172a, #1e293b)",
+        color: "#ffffff",
+        padding: "24px",
+        boxSizing: "border-box",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "720px",
+          margin: "0 auto",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
-};
+}
